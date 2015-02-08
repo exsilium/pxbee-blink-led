@@ -44,7 +44,7 @@ After this you can compile the project by executing:
 
 Source files include a header of copyright and license.
 
-Includes the full [Digi](http://www.digi.com) XBee SDK version 1.5.7
+Includes the full [Digi](http://www.digi.com) XBee SDK version 1.5.7 sources.
 
 Includes the necessary build binaries:
 ```
