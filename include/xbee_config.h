@@ -9,7 +9,7 @@
 #define __XBEE_CONFIG_H_
 
 /* Project definitions */
-#define APP_VERSION_STRING              "Blink led example"
+#define APP_VERSION_STRING              "BlinkLed v0.0.1_OTA"
 #define CONFIG_XBEE_ZB
 #define CONFIG_XBEE_THT
 #define CONFIG_XBEE_S2B
@@ -42,6 +42,8 @@
 #define GPIO_CFG_DRV_STR_7              GPIO_CFG_DRV_STR_LOW
 
 /* network0 component */
+#define ENABLE_OTA_UPDATE
+//#define TRIGGER_FW_UPDATE               "12345"
 
 /* uart0 component */
 #define ENABLE_UART
@@ -53,6 +55,10 @@
 #define UART_CFG_RX_WATERMARK           1
 #define UART_CFG_RX_BUF_LEN             32
 #define ENABLE_STDIO_PRINTF_SCANF       1
+
+/* xbee_config0 component */
+//#define XBEE_ATCMD_PARAM_ID             "0123456789ABCDEF"
+#define XBEE_ATCMD_PARAM_NI             "PROGRAMMABLE TEST 1"
 
 /* Used pins macros */
 #define XPIN_15_USED
