@@ -13,7 +13,7 @@ You need to install 32bit compatibility. For example in Ubuntu:
 
 `sudo apt-get install lib32stdc++6`
 
-Verify that the compiler is possible to execute:
+Verify that the compiler is able to execute:
 
 `./hc08c/bin/chc08 -Lic`
 
@@ -23,13 +23,19 @@ You should be able to compile the project:
 
 ## Mac OS X
 
-As  depend on the Linux 32bit compiler/linker to be working, the compatibility is achieved through [Docker](https://www.docker.com). You need to have a working Docker installation prior to building this project. To get started, download [Boot2Docker](http://boot2docker.io). After you have a working Docker environment (you can successfully run: `docker version`). You can build the compiler image included in this project:
+As the project depends on the Linux 32bit compiler/linker, the OS X compatibility is achieved through [Docker](https://www.docker.com). You need to have a working Docker installation prior to building this project. To get started, download [Docker](http://docker.io). After you have a working Docker environment (you can successfully run: `docker version`). You can build the compiler image included in this project:
 
 `make builddocker`
 
 After this you can compile the project by executing:
 
 `make dall`
+
+# Outcome
+
+The expected outcome of the compiler and linker will be an .abs file that is input to the burner that will generate the final application binary `obj/blink_led.bin` and in Motorola format application coupled with the bootloader `obj/blink_led.s19`. Use these files to test the application on hardware.
+
+The application will blink a LED connected to pin 7 with 125ms interval.
 
 # Cleaning
 
@@ -44,7 +50,7 @@ After this you can compile the project by executing:
 
 Source files include a header of copyright and license.
 
-Includes the full [Digi](http://www.digi.com) XBee SDK version 1.5.7 sources.
+Includes the full [Digi](http://www.digi.com) XBee SDK version 1.6.0 sources (latest at the time of commit).
 
 Includes the necessary build binaries:
 ```
