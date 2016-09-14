@@ -56,6 +56,25 @@
 #include <xbee_config.h>
 #include <types.h>
 
+#ifdef ENABLE_XBEE_HANDLE_RX
+int xbee_transparent_rx(const wpan_envelope_t FAR *envelope, void FAR *context)
+{
+	char addrbuf[ADDR64_STRING_LENGTH];
+
+	puts("Received Simple Frame");
+	puts("---------------------");
+	sys_watchdog_reset();
+	printf("Source     : %s\n", addr64_format(addrbuf, &envelope->ieee_address));
+	printf("Network    : %04x\n", be16toh(envelope->network_address));
+	printf("Data length: %u\n", envelope->length);
+	sys_watchdog_reset();
+	dump(envelope->payload, envelope->length);
+	puts("\n");
+
+	return 0;
+}
+#endif
+
 #if defined(RTC_ENABLE_PERIODIC_TASK)
 void rtc_periodic_task(void)
 {

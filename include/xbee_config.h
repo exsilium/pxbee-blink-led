@@ -42,6 +42,7 @@
 #define GPIO_CFG_DRV_STR_7              GPIO_CFG_DRV_STR_LOW
 
 /* network0 component */
+#define ENABLE_XBEE_HANDLE_RX
 #define ENABLE_OTA_UPDATE
 //#define TRIGGER_FW_UPDATE               "12345"
 
